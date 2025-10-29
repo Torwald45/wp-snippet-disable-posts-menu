@@ -42,7 +42,6 @@ Once installed and activated:
 3. Custom Post Types remain unaffected and fully accessible
 
 ## Use Cases
-## Use Cases
 
 WordPress enables all features by default, which clutters the admin interface unnecessarily. This snippet helps clean up the backend when you don't need the Posts feature:
 
