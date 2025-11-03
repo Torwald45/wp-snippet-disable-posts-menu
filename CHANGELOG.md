@@ -1,8 +1,18 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
-
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [1.1.0] - 2025-11-03
+
+### Changed
+- Commented out URL blocking functionality to prevent conflicts with plugins
+- ACF Pro and other plugins that use WordPress admin pages for custom functionality were being blocked
+- Menu removal provides sufficient protection against accidental post creation
+
+### Technical Details
+- Function `torwald45_disable_posts_menu_block_access()` and its hook are now commented out
+- URL blocking may be re-implemented in future versions with better context detection
+- See GitHub issue for details about the conflict and possible solutions
 
 ## [1.0.1] - 2025-10-30
 

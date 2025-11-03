@@ -1,15 +1,19 @@
 # WP Snippet: Disable Posts Menu
 
-Completely removes WordPress posts (post_type: post) from admin interface and blocks direct URL access to post management pages.
+Removes WordPress posts (post_type: post) menu from admin interface.
 
 ## Features
 
 - Removes "Posts" menu item from WordPress admin sidebar
-- Blocks direct URL access to edit.php, post.php, and post-new.php
-- Returns 403 Access Denied error for unauthorized access attempts
+- Lightweight - single hooked function
 - Does not affect Custom Post Types - only native WordPress posts
-- Lightweight - only 2 hooked functions
 - Unique prefixes (torwald45_disable_posts_menu_) for all function names to prevent conflicts
+
+## Important Note
+
+**URL blocking functionality has been disabled** (commented out in code) due to conflicts with ACF Pro and other plugins that use WordPress admin pages for their own custom functionality.
+
+Menu removal provides sufficient protection against accidental post creation. If you need stricter access control, see the GitHub issue for possible implementation strategies.
 
 ## Requirements
 
@@ -38,7 +42,7 @@ Completely removes WordPress posts (post_type: post) from admin interface and bl
 Once installed and activated:
 
 1. The "Posts" menu item will be removed from WordPress admin sidebar
-2. Direct access attempts to post management URLs will be blocked with 403 error
+2. Direct URL access to post management pages is possible but WordPress will handle appropriately
 3. Custom Post Types remain unaffected and fully accessible
 
 ## Use Cases
@@ -56,18 +60,16 @@ WordPress enables all features by default, which clutters the admin interface un
 ## Technical Details
 
 ### Hooks Used
+
 - `admin_menu` (priority 999) - removes Posts menu item
-- `admin_init` - blocks direct URL access
 
-### Blocked Pages
-- `edit.php` (post list)
-- `post.php` (post edit)
-- `post-new.php` (new post)
+### URL Blocking (Currently Disabled)
 
-### Security
-- Returns HTTP 403 status code for blocked access
-- Does not affect Custom Post Types (checked via `post_type` parameter)
-- All functions use unique `torwald45_disable_posts_menu_` prefix
+URL blocking functionality is commented out in the code due to conflicts with plugins like ACF Pro. The blocking logic cannot reliably distinguish between:
+- Direct attempts to access post management pages
+- Legitimate plugin usage of WordPress admin pages for custom functionality
+
+For details and possible solutions, see the related GitHub issue.
 
 ## Changelog
 

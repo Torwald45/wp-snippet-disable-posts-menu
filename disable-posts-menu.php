@@ -8,9 +8,8 @@
  * @author      Torwald45
  * @link        https://github.com/Torwald45/wp-snippet-disable-posts-menu
  * @license     GPL-2.0-or-later
- * @version     1.0.1
+ * @version     1.1.0
  */
-
 // Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
@@ -28,9 +27,20 @@ add_action('admin_menu', 'torwald45_disable_posts_menu_remove_menu', 999);
 
 /**
  * Block direct URL access to post management pages
+ * 
+ * COMMENTED OUT: This function conflicts with ACF Pro and other plugins that use
+ * WordPress admin pages (post.php, post-new.php) for their own custom functionality.
+ * When these plugins access post.php without standard parameters, the blocking logic
+ * cannot distinguish between legitimate plugin use and direct post access attempts.
+ * 
+ * Menu removal provides sufficient protection against accidental post creation.
+ * URL blocking may be re-implemented in future versions with better context detection.
+ * 
+ * See GitHub issue for details and possible solutions.
  *
  * @return void
  */
+/*
 function torwald45_disable_posts_menu_block_access() {
     global $pagenow;
     
@@ -68,3 +78,4 @@ function torwald45_disable_posts_menu_block_access() {
     }
 }
 add_action('admin_init', 'torwald45_disable_posts_menu_block_access');
+*/
