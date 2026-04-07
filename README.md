@@ -1,23 +1,23 @@
 # WP Snippet: Disable Posts Menu
 
-Removes WordPress posts (post_type: post) menu from admin interface.
+Removes WP posts (post_type: post) menu from admin interface.
 
 ## Features
 
-- Removes "Posts" menu item from WordPress admin sidebar
+- Removes "Posts" menu item from WP admin sidebar
 - Lightweight - single hooked function
-- Does not affect Custom Post Types - only native WordPress posts
+- Does not affect Custom Post Types - only native WP posts
 - Unique prefixes (torwald45_disable_posts_menu_) for all function names to prevent conflicts
 
 ## Important Note
 
-**URL blocking functionality has been disabled** (commented out in code) due to conflicts with ACF Pro and other plugins that use WordPress admin pages for their own custom functionality.
+**URL blocking functionality has been disabled** (commented out in code) due to conflicts with ACF Pro and other plugins that use WP admin pages for their own custom functionality.
 
 Menu removal provides sufficient protection against accidental post creation. If you need stricter access control, see the GitHub issue for possible implementation strategies.
 
 ## Requirements
 
-- WordPress 5.0 or higher
+- WP 5.0 or higher
 - PHP 7.4 or higher
 
 ## Installation
@@ -41,19 +41,19 @@ Menu removal provides sufficient protection against accidental post creation. If
 
 Once installed and activated:
 
-1. The "Posts" menu item will be removed from WordPress admin sidebar
-2. Direct URL access to post management pages is possible but WordPress will handle appropriately
+1. The "Posts" menu item will be removed from WP admin sidebar
+2. Direct URL access to post management pages is possible but WP will handle appropriately
 3. Custom Post Types remain unaffected and fully accessible
 
 ## Use Cases
 
-WordPress enables all features by default, which clutters the admin interface unnecessarily. This snippet helps clean up the backend when you don't need the Posts feature:
+WP enables all features by default, which clutters the admin interface unnecessarily. This snippet helps clean up the backend when you don't need the Posts feature:
 
 - **Landing pages** - Single page sites don't need blog posts
 - **Portfolio sites** - Using Custom Post Types for projects, not blog posts
 - **Business websites** - Static pages only, no blog section
 - **Client projects** - Cleaner admin interface, less confusion
-- **E-commerce sites** - Using WooCommerce products, not posts
+- **E-commerce sites** - Using Woo products, not posts
 
 **Philosophy:** Disable everything you don't use. Enable only what you need. If you decide to add a blog later, simply deactivate this snippet.
 
@@ -67,7 +67,7 @@ WordPress enables all features by default, which clutters the admin interface un
 
 URL blocking functionality is commented out in the code due to conflicts with plugins like ACF Pro. The blocking logic cannot reliably distinguish between:
 - Direct attempts to access post management pages
-- Legitimate plugin usage of WordPress admin pages for custom functionality
+- Legitimate plugin usage of WP admin pages for custom functionality
 
 For details and possible solutions, see the related GitHub issue.
 

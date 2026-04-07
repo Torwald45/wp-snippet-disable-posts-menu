@@ -2,7 +2,7 @@
 /**
  * WP Snippet: Disable Posts Menu
  * 
- * Completely removes WordPress posts (post_type: post) from admin interface
+ * Completely removes WP posts (post_type: post) from admin interface
  * and blocks direct URL access to post management pages.
  * 
  * @author      Torwald45
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Remove Posts menu from WordPress admin
+ * Remove Posts menu from WP admin
  *
  * @return void
  */
@@ -29,7 +29,7 @@ add_action('admin_menu', 'torwald45_disable_posts_menu_remove_menu', 999);
  * Block direct URL access to post management pages
  * 
  * COMMENTED OUT: This function conflicts with ACF Pro and other plugins that use
- * WordPress admin pages (post.php, post-new.php) for their own custom functionality.
+ * WP admin pages (post.php, post-new.php) for their own custom functionality.
  * When these plugins access post.php without standard parameters, the blocking logic
  * cannot distinguish between legitimate plugin use and direct post access attempts.
  * 
